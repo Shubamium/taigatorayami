@@ -1,0 +1,89 @@
+#header {
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+
+  .confine {
+    padding-top: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+      padding-top: 1.5em;
+    }
+    .head-nav {
+      display: flex;
+      gap: 2em;
+      .btn-nav {
+        color: #b5b5b5;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        position: relative;
+        transition-duration: 400ms;
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: -20%;
+          left: 0%;
+          width: 100%;
+          height: 1px;
+          background-color: var(--orange);
+          transform-origin: center;
+          scale: 0 1;
+          transition: all 500ms ease;
+          user-select: none;
+          pointer-events: none;
+        }
+
+        &:hover {
+          // color: var(--orange);
+          color: white;
+          &::before {
+            scale: 1 1;
+          }
+        }
+      }
+    }
+
+    .langselector {
+      display: flex;
+      gap: 0.2em;
+      font-size: 1.5rem;
+      color: grey;
+      align-items: center;
+      .btn-lang {
+        color: #b5b5b5;
+        font-size: 1.2rem;
+        padding: 0.25em 1em;
+        &.active,
+        &:hover {
+          background: white;
+          color: black;
+          font-weight: bold;
+        }
+        border: 1px solid transparent;
+        &:hover {
+          background: none;
+          border: 1px solid #b5b5b5;
+          color: #b5b5b5;
+        }
+      }
+    }
+  }
+}
+
+#header {
+  .mainart {
+    display: none;
+  }
+}
+body:has(#p_portfolio[style*="display: block"]) #header {
+  .mainart {
+    display: block;
+    position: absolute;
+    right: 0%;
+    z-index: -10;
+    user-select: none;
+    pointer-events: none;
+  }
+}

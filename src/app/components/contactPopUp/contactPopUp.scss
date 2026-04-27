@@ -1,0 +1,105 @@
+#contact_pp {
+  top: 0%;
+  left: 0%;
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.884);
+    backdrop-filter: blur(20px);
+    height: 100%;
+    z-index: -100;
+    transition: all 500ms ease;
+  }
+
+  &.closed {
+    user-select: none;
+    pointer-events: none;
+    &::before {
+      opacity: 0;
+    }
+    .dialog {
+      transform: translateY(10%);
+      opacity: 0;
+    }
+  }
+
+  .dialog {
+    z-index: 500;
+    transition: all 500ms ease;
+    width: 650px;
+    margin: 0 auto;
+    border: 3px solid #616161;
+    background: black url("/b/grunge1_30.png");
+    max-height: 80vh;
+    h2 {
+      font-size: 2.4rem;
+      text-align: center;
+      color: var(--orange);
+      padding: 0.5em;
+    }
+    hr {
+      width: 100%;
+      height: 4px;
+      margin-bottom: 8px;
+      background: url("/d/ctpopline.png");
+      border: none;
+      background-size: 100% 100%;
+    }
+    .content {
+      max-height: 50vh;
+
+      font-size: 1.2rem;
+      padding: 2.4em;
+      padding-top: 0.7em;
+      overflow-y: auto;
+      mask-image: linear-gradient(to bottom, white 90%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+    }
+    .footer {
+      background: linear-gradient(to right, #151515, #242424);
+      display: flex;
+      align-items: center;
+      padding: 1em;
+      justify-content: center;
+      box-shadow: 0px -10px 20px 15px rgba(0, 0, 0, 0.486);
+      .btn-contact {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 2em;
+        background: rgba(56, 56, 56, 0.473);
+        border-radius: 0.5em;
+        font-size: 1.3rem;
+        font-family: var(--fontqqt);
+        padding: 0.5em 1em;
+        &:hover {
+        }
+        .border {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          user-select: none;
+          pointer-events: none;
+        }
+        display: flex;
+        justify-content: center;
+        color: white;
+        align-items: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,143 @@
+#p_achievements {
+  padding-top: 200px;
+  .confine {
+    position: relative;
+  }
+  // min-height: 4000px;
+  .bgtext {
+    left: -100px;
+    top: -50px;
+    position: absolute;
+    mask-image: linear-gradient(to bottom, black, transparent);
+  }
+  .special-heading {
+    position: relative;
+
+    .hlt {
+      font-size: 5rem;
+    }
+    .sht {
+      font-size: 5rem;
+    }
+  }
+
+  #imglist {
+    height: 400px;
+    img {
+      width: auto;
+      height: 100%;
+    }
+
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2em;
+    overflow: hidden;
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      white 10%,
+      white 90%,
+      transparent 100%
+    );
+  }
+
+  .circle {
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    background: linear-gradient(to bottom, #0f0f0f, #0f0f0f00);
+    z-index: -10;
+    &.l {
+      left: -20%;
+    }
+    &.r {
+      right: -20%;
+    }
+    border-radius: 50%;
+  }
+  #biography {
+    max-width: 1400px;
+    margin: 200px auto;
+    .biohead {
+      position: relative;
+      .trophydecor {
+        position: absolute;
+        z-index: -2;
+        right: 0%;
+        top: -100%;
+      }
+      .hlt {
+        font-size: 5rem;
+      }
+      .ctrl {
+        display: flex;
+        gap: 1em;
+        margin: 1em 0;
+        .btn-year {
+          background: black;
+
+          color: white;
+          font-size: 2rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          padding: 0.25em 1em;
+          img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            transition: all 100ms ease;
+          }
+          border-radius: 0.2em;
+          &:hover,
+          &.act {
+            background: #9b9b9b;
+            border: 3px solid #9b9b9b;
+            color: black;
+            img {
+              opacity: 0;
+            }
+          }
+        }
+      }
+    }
+    .list {
+      display: grid;
+      grid-template-columns: 100px 3fr;
+      margin-top: 50px;
+      .line {
+        display: flex;
+        height: 100%;
+        .l {
+          width: 3px;
+          height: 100%;
+          background: #242424;
+        }
+      }
+      .datelist {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        .date {
+          border: 3px solid #9b9b9b;
+          background: black url("/b/grunge1_30.png");
+          padding: 2em;
+          display: grid;
+          grid-template-columns: 1fr 3fr;
+          align-items: center;
+          .d {
+            font-size: 2rem;
+            opacity: 0.5;
+          }
+          .name {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+  }
+}

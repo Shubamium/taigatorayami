@@ -1,66 +1,187 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-
+import { CSSProperties } from "react";
+import "./home.scss";
+import Link from "next/link";
+import { FaChevronLeft, FaChevronRight, FaYoutube } from "react-icons/fa";
+import TextStrip from "./home/textstrip/TextStrip";
+import { PiFilmSlate, PiFilmSlateFill } from "react-icons/pi";
+import HeroSection from "./home/HeroSection";
+import RecentVideos from "./home/recentVideos/RecentVideos";
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main id="p_home">
+      <HeroSection />
+      <TextStrip />
+      <img src="/d/section-line.svg" alt="" className="sectionline" />
+      <section id="about">
+        <div className="centerline"></div>
+        <div className="chains l"></div>
+        <div className="chains r"></div>
+        <div className="confine">
+          <img src="/d/catchmelive.svg" alt="" className="bgtext" />
+          <div className="art">
+            <img src="/d/scratchcircle.png" alt="" className="circ" />
+            <img src="/d/catchborder.png" alt="" className="catchborder" />
+            <img src="/d/catcharrr.png" alt="" className="catcharr" />
+            <img src="/g/aboutart.png" alt="" className="aboutart" />
+          </div>
+          <div className="text">
+            <div className="l"></div>
+            <div className="r hero-content">
+              <article>
+                <div className="heading">
+                  <h2 className="hlt"> Catch me live</h2>
+                  <p className="sht">on Twitch!</p>
+                </div>
+                <p className="desc">
+                  I stream on twitch every Thursday - Sunday from 4PM - 7PM EST!
+                  If you like horror games, yappy tomboys, and ASMR streams, my
+                  stream is the right place for you~! Enjoy the chaos!
+                </p>
+              </article>
+
+              <div className="ctb">
+                <div className="contact-list">
+                  <Link href={"https://youtube.com"} className="btn btn-ct">
+                    <FaYoutube className="icon" />
+                  </Link>
+                  <Link href={"https://youtube.com"} className="btn btn-ct">
+                    <FaYoutube className="icon" />
+                  </Link>
+                  <Link href={"https://youtube.com"} className="btn btn-ct">
+                    <FaYoutube className="icon" />
+                  </Link>
+                  <Link href={"https://youtube.com"} className="btn btn-ct">
+                    <FaYoutube className="icon" />
+                  </Link>
+                  <Link href={"https://youtube.com"} className="btn btn-ct">
+                    <FaYoutube className="icon" />
+                  </Link>
+                </div>
+
+                <div className="twitch-li">
+                  <iframe
+                    src="https://www.player.twitch.tv/?channel=TaigaTorayami&parent=localhost"
+                    allowFullScreen
+                    allow="encrypted-media *;"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <RecentVideos />
+      <section id="cons">
+        <img src="/d/conbg.png" alt="" className="bg" />
+        <div className="meetgreetscroll"></div>
+        <div className="confine">
+          <img src="/d/coloredscratch.png" alt="" className="scratch tr" />
+          <img src="/d/coloredscratch.png" alt="" className="scratch bl" />
+          <div className="art">
+            <img src="/p/consart.png" alt="" />
+          </div>
+
+          <div className="cons-list">
+            <div className="heading-panel">
+              <h2 className="hlt">Convention Schedule</h2>
+              <p>Come meet me and say hi in person!</p>
+            </div>
+
+            <div className="concontent">
+              <div className="line">
+                <img src="/d/conline.svg" alt="" />
+              </div>
+              <div className="list">
+                <div className="con">
+                  <img src="/g/conplaceholder.png" alt="" className="img" />
+                  <img src="/d/conpin.png" alt="" className="pin" />
+                  <h2 className="sht">TBA</h2>
+                  <p className="sht">December 12-14 2025</p>
+                </div>
+
+                <div className="con">
+                  <img src="/g/conplaceholder.png" alt="" className="img" />
+                  <img src="/d/conpin.png" alt="" className="pin" />
+                  <h2 className="sht">TBA</h2>
+                  <p className="sht">December 12-14 2025</p>
+                </div>
+
+                <div className="con">
+                  <img src="/g/conplaceholder.png" alt="" className="img" />
+                  <img src="/d/conpin.png" alt="" className="pin" />
+                  <h2 className="sht">TBA</h2>
+                  <p className="sht">December 12-14 2025</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+        <div className="chains tb"></div>
+        <div className="chains t"></div>
+      </section>
+    </main>
   );
 }
+
+// function WavyBorder({ id }: { id: string }) {
+//   return (
+//     <svg
+//       width="50"
+//       height="50"
+//       viewBox="0 0 50 50"
+//       fill="none"
+//       xmlns="http://www.w3.org/2000/svg"
+//       className="border"
+//     >
+//       <g filter={`url(#${id})`}>
+//         <rect
+//           x="46.5996"
+//           y="2.6001"
+//           width="44"
+//           height="44"
+//           transform="rotate(90 46.5996 2.6001)"
+//           stroke="currentColor"
+//           strokeWidth="2"
+//         />
+//       </g>
+//       <defs>
+//         <filter
+//           id={id}
+//           x="-0.000390649"
+//           y="9.76324e-05"
+//           width="49.2"
+//           height="49.2"
+//           filterUnits="userSpaceOnUse"
+//           colorInterpolationFilters="sRGB"
+//         >
+//           <feFlood floodOpacity="0" result="BackgroundImageFix" />
+//           <feBlend
+//             mode="normal"
+//             in="SourceGraphic"
+//             in2="BackgroundImageFix"
+//             result="shape"
+//           />
+//           {/* <feTurbulence
+//             type="fractalNoise"
+//             baseFrequency="0.10204081237316132 0.10204081237316132"
+//             numOctaves="100"
+//             seed="1660"
+//           /> */}
+//           <feDisplacementMap
+//             in="shape"
+//             scale="3.2000000476837158"
+//             xChannelSelector="R"
+//             yChannelSelector="G"
+//             result="displacedImage"
+//             width="100%"
+//             height="100%"
+//           />
+//           <feMerge result="effect1_texture_254_145">
+//             <feMergeNode in="displacedImage" />
+//           </feMerge>
+//         </filter>
+//       </defs>
+//     </svg>
+//   );
+// }

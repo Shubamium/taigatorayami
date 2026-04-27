@@ -1,0 +1,219 @@
+#p_gallery {
+  #main {
+    margin-top: 150px;
+    .heading {
+      .confine {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 1440px;
+        gap: 1em;
+        .bgtext {
+          position: absolute;
+
+          z-index: -10;
+          top: 0%;
+          width: 100%;
+        }
+        .styled {
+          font-size: 7rem;
+        }
+        hr {
+          background: url("/d/orstroke.png");
+          height: 4px;
+          width: 100%;
+          border: none;
+          background-size: 100%;
+        }
+      }
+    }
+
+    .gallerycontainer {
+      position: relative;
+
+      .confine {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 2em;
+        max-width: 1440px;
+        .hlt {
+          max-width: max-content;
+          padding: 0 0.2em;
+          padding-right: 1em;
+          font-size: 1.4rem;
+        }
+        .desc {
+          margin: 1em 0;
+          color: #b1b1b1;
+        }
+        .details {
+          border: 2px solid #636363;
+          padding: 2em;
+          background: black url("/b/grunge1_30.png");
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            rotate: -3deg;
+            width: 100%;
+            height: 100%;
+            z-index: -10;
+            background: #636363;
+          }
+          .claw {
+            position: absolute;
+            right: -30px;
+            top: -30px;
+            width: 80px;
+          }
+
+          .ig {
+            margin: 1em 0;
+
+            .il {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 0.5em;
+              margin: 1em 0;
+              .info {
+                padding: 0.5em 0.7em;
+
+                position: relative;
+                &::before {
+                  content: "";
+                  position: absolute;
+                  top: 0%;
+                  left: 0%;
+                  width: 100%;
+                  height: 100%;
+                  background: url("/d/texture-bordermail.png");
+                  background-size: 100% 100%;
+                  z-index: 100;
+                }
+
+                h3 {
+                  font-size: 1.1rem;
+                  // opacity: 0.4;
+                  color: #484848;
+                }
+                p {
+                  font-size: 1.3rem;
+                  color: #b1b1b1;
+                  text-align: right;
+                }
+
+                &.icon {
+                  display: flex;
+                  justify-content: start;
+                  align-items: center;
+                  gap: 1em;
+                  cursor: pointer;
+
+                  svg {
+                    width: 40px;
+                    padding: 0.25em;
+                    height: 40px;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .sheets {
+          aspect-ratio: 16 / 9;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 2px solid #636363;
+          }
+        }
+      }
+    }
+  }
+
+  #illustrations {
+    margin-block: 100px;
+    position: relative;
+
+    &::before {
+      content: "";
+      z-index: -10;
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      scale: 1 0.9;
+      width: 100%;
+      height: 100%;
+      background: black url("/b/grunge1_30.png");
+    }
+    .heading {
+      margin: 0 auto;
+      gap: 2em;
+      display: flex;
+      justify-content: center;
+
+      .hlt {
+        font-size: 2.5rem;
+        padding: 0.1em 0.5em;
+      }
+      p {
+        max-width: 400px;
+      }
+      position: relative;
+      .bgtext {
+        left: 30%;
+        bottom: -200px;
+        position: absolute;
+      }
+    }
+
+    .artcarousel {
+      display: flex;
+      gap: 3em;
+      height: 500px;
+      flex-wrap: nowrap;
+      padding: 1em;
+      max-width: 1920px;
+      margin: 0 auto;
+      mask-image: linear-gradient(
+        to right,
+
+        transparent 0%,
+        black 10%,
+        black 90%,
+        transparent 100%
+      );
+      .artc {
+        height: 100%;
+        width: auto;
+        object-fit: contain;
+
+        flex-shrink: 0;
+        position: relative;
+        background: #292929;
+        border: 4px solid #292929;
+        .title {
+          position: absolute;
+          right: 0%;
+          bottom: 0%;
+          background: #292929;
+          color: #b1b1b1;
+          padding: 0.25em 1em;
+          font-size: 1.2rem;
+          clip-path: polygon(20px 0%, 100% 0, 100% 100%, 0% 100%);
+          padding-left: 30px;
+          span {
+            font-weight: bold;
+          }
+        }
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}

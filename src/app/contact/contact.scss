@@ -1,0 +1,86 @@
+#p_contact {
+  min-height: 100vh;
+
+  #contact {
+    margin-top: 200px;
+    background: linear-gradient(to bottom, #111111, #0c0c0c);
+    padding: 50px;
+
+    .confine {
+      max-width: 900px;
+      margin: 0 auto;
+      .hlt {
+        font-size: 5rem;
+        max-width: min-content;
+        padding: 0 0.1em;
+        margin-bottom: 0.2em;
+      }
+      p {
+        font-size: 1.7rem;
+        margin-bottom: 1em;
+      }
+
+      #formcontact {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+      }
+      .ig {
+        margin-bottom: 0.25em;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2em;
+        label {
+          font-size: 1.4rem;
+          text-transform: uppercase;
+          margin-bottom: 0;
+        }
+        input,
+        textarea {
+          background: #0f0f0f;
+          font-family: var(--fontqtt);
+          padding: 1em;
+          border: 2px solid #3a3a3a;
+          color: #b1b1b1;
+          font-size: 1.2rem;
+          &::placeholder {
+            color: #b1b1b13a;
+          }
+        }
+
+        textarea {
+          resize: none;
+          min-height: 250px;
+        }
+      }
+
+      .action {
+        display: flex;
+        .btnsub {
+          position: relative;
+          background: black, url("/b/grunge1_13.png");
+
+          &:hover {
+            filter: brightness(1.4);
+          }
+          .border {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            user-select: none;
+            pointer-events: none;
+          }
+          padding: 0.5em 1em;
+          color: #474747;
+          margin: 1em 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 3em;
+          font-size: 2rem;
+          font-family: var(--fontqtt);
+        }
+      }
+    }
+  }
+}

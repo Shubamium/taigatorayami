@@ -1,0 +1,354 @@
+#p_portfolio {
+  padding-top: 200px;
+  position: relative;
+  display: block;
+  #reel-heading {
+    max-width: 1600px;
+    margin: 0 auto;
+    h2 {
+      font-size: 7rem;
+      position: relative;
+      img {
+        position: absolute;
+        top: -5%;
+        right: 96%;
+        width: 100%;
+        height: 100%;
+        width: 100px;
+        height: 100px;
+        scale: -1 1;
+      }
+    }
+
+    p {
+      font-size: 2.3rem;
+      color: #b1b1b1;
+
+      .sub {
+        color: white;
+        transition: all 250ms ease;
+        &:hover,
+        &.act {
+          color: var(--orange);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  position: relative;
+  z-index: 1;
+  #voice-list {
+    display: flex;
+    gap: 3em;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1700px;
+    margin: 100px auto;
+    flex-grow: 0;
+    flex-wrap: wrap;
+    .voice {
+      width: 100%;
+      padding: 1em;
+      background: url("/b/grunge1_30.png"), #131313;
+      border: 2px solid #b1b1b1;
+      position: relative;
+      width: 500px;
+      h2 {
+        font-size: 3.3rem;
+        padding: 0.1em 0.2em;
+      }
+      .cd {
+        position: absolute;
+        bottom: 60%;
+        z-index: -1;
+        right: 5%;
+        @keyframes speen {
+          from {
+            rotate: 0deg;
+          }
+          to {
+            rotate: 360deg;
+          }
+        }
+        animation: speen 10s infinite linear;
+      }
+
+      .btn-audio {
+        width: 60px;
+        background: white;
+        color: black;
+        border-radius: 100%;
+        aspect-ratio: 1 / 1;
+        padding: 0.7em;
+        svg {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      position: relative;
+      .action {
+        display: flex;
+        gap: 0.5em;
+        margin-top: 1em;
+        input {
+          width: 100%;
+          color: var(--orange);
+          accent-color: var(--orange);
+        }
+        align-items: center;
+        .dur {
+          padding: 0.25em 1em;
+          background: #d8d8d8;
+          color: black;
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+
+  // currently empy
+  #showlist {
+    background: url("/g/tempbg.png");
+    background-size: 120%;
+    background-position: center;
+
+    border-bottom: 2px solid var(--orange);
+    border-top: 2px solid var(--orange);
+
+    .confine {
+      position: relative;
+      .side {
+        position: absolute;
+        left: 0%;
+        top: 0%;
+        height: 100%;
+        width: 100px;
+        // background: red;
+        display: flex;
+        gap: 1em;
+        flex-direction: column;
+        align-items: center;
+        &.r {
+          left: auto;
+          right: 0%;
+        }
+        .arr {
+          display: flex;
+          flex-direction: column;
+          gap: 1em;
+          .a {
+            width: 30px;
+            height: 30px;
+            background: white;
+            clip-path: polygon(49% 100%, 0 0, 100% 0);
+
+            &:nth-child(odd) {
+              background: var(--orange);
+            }
+          }
+        }
+        hr {
+          width: 2px;
+          border: none;
+          background: var(--orange);
+          height: 100%;
+        }
+      }
+      display: flex;
+      justify-content: center;
+      .cms {
+      }
+    }
+  }
+
+  #business-contact {
+    position: relative;
+    .confine {
+      display: grid;
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      align-items: center;
+      height: 100%;
+
+      .l {
+        padding: 2em;
+        border: 1px solid #b1b1b1;
+        width: 100%;
+        background: black url("/b/grunge1_30.png");
+        .heading {
+          display: flex;
+          gap: 1em;
+          align-items: center;
+          .hlt {
+            font-size: 4rem;
+            padding: 0 0.25em;
+          }
+          p {
+            font-size: 1.2rem;
+          }
+        }
+        .action {
+          display: flex;
+          margin-top: 30px;
+
+          .btn-mail {
+            position: relative;
+            .border {
+              width: 100%;
+              height: 100%;
+              user-select: none;
+              pointer-events: none;
+              position: absolute;
+            }
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1em;
+            padding: 0.5em 2em;
+            svg {
+              width: 40px;
+              height: 50px;
+              padding: 0.25em;
+            }
+          }
+          gap: 2em;
+          .btn-contact {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 2em;
+            width: 100%;
+            background: rgba(56, 56, 56, 0.473);
+            border-radius: 0.5em;
+            font-size: 1.3rem;
+            font-family: var(--fontqqt);
+            filter: brightness(40%);
+            &:hover {
+              filter: brightness(70%);
+            }
+            .border {
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              user-select: none;
+              pointer-events: none;
+            }
+            display: flex;
+            justify-content: center;
+            color: white;
+          }
+        }
+      }
+      .r {
+        width: 100%;
+        user-select: none;
+        pointer-events: none;
+        height: 800px;
+        .ctart {
+          position: absolute;
+          right: -200px;
+          bottom: 0%;
+          height: 100%;
+        }
+      }
+    }
+    .bgtext {
+      position: absolute;
+      left: -20%;
+      top: 10%;
+      width: 80vw;
+      z-index: -1;
+    }
+    .tigerskin {
+      position: absolute;
+      height: 100%;
+      background: url("/b/tigerskin.png");
+      background-size: 100%;
+      align-items: center;
+      width: 100%;
+      clip-path: polygon(0 22%, 100% 39%, 100% 68%, 0 80%);
+    }
+  }
+
+  // Roles
+  .role-selection {
+    margin: 2em 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      width: 100%;
+      height: 100%;
+      background: grey;
+      scale: 1 0.7;
+      opacity: 0.2;
+    }
+    position: relative;
+    .confine {
+      background: url("/b/grunge1_30.png"), black;
+      padding: 3em;
+      border: 1px solid #b1b1b1;
+      max-width: 1440px;
+      margin: 100px auto;
+
+      .hlt {
+        font-size: 4rem;
+        width: max-content;
+        padding: 0 0.25em;
+      }
+      position: relative;
+      .btn-arrow {
+        position: absolute;
+        width: 50px;
+        height: 120px;
+        background: var(--orange);
+        border-radius: 1em;
+        // padding: 0.1em;
+        &.l {
+          position: absolute;
+          right: -2%;
+          top: 30%;
+        }
+        &.r {
+          position: absolute;
+          top: 30%;
+          left: -2%;
+        }
+        svg {
+          width: 100%;
+          height: 80px;
+        }
+      }
+      .roles {
+        display: flex;
+        gap: 3em;
+        width: 180px;
+        padding: 1em;
+        align-items: center;
+        position: relative;
+
+        hr {
+          height: 180px;
+          width: 5px;
+          background: grey;
+        }
+
+        .pfp {
+          padding: 0.5em;
+          border-radius: 50%;
+          width: 180px;
+        }
+        p {
+          text-align: center;
+          font-size: 1.6rem;
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
