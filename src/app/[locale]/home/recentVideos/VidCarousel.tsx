@@ -26,7 +26,7 @@ export default function VidCarousel({ data }: Props) {
               <a
                 href={`https://youtube.com/watch?v=${vid}`}
                 className="vid-containe"
-                key={vid + "videocon"}
+                key={vid + "videocon" + i}
               >
                 <img
                   src={`https://img.youtube.com/vi/${vid}/sddefault.jpg`}

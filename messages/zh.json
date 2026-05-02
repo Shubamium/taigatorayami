@@ -1,0 +1,60 @@
+{
+  "navigation": {
+    "title": "Hello world!",
+    "home": "首页",
+    "about": "关于",
+    "gallery": "画廊",
+    "portfolio": "作品集",
+    "merch": "商品",
+    "achievements": "成就",
+    "contacts": "联系方式"
+  },
+  "textstrip": {
+    "bio": "虎谷未来是一位VTuber、配音演员和Lewdtuber，于2024年10月24日首次亮相🐯 虎谷在YouTube和Twitch上获得了超过15K的粉丝，在Twitter上获得100k，在Fansly上获得60k🐯 虎谷与以下品牌合作：Gamersupps、Kawa Entertainment和AfterDark！🐯"
+  },
+  "home": {
+    "catchMeLive": "来看我直播",
+    "onTwitch": "在 Twitch 上！",
+    "streamDesc": "我每周四至周日东部时间下午4点-7点在Twitch上直播！如果你喜欢恐怖游戏、爱聊天的女孩和ASMR直播，我的频道就是你的最佳选择~！享受混乱吧！",
+    "conventionTitle": "展会日程",
+    "conventionDesc": "来见我，打个招呼吧！",
+    "recentVideosTitle": "查看我最近的视频",
+    "recentVideosSubtitle": "YouTube 视频！",
+    "mainChannel": "主频道",
+    "vsekaiChannel": "VSEKAI 频道"
+  },
+  "footer": {
+    "rights": "© 2026 版权所有",
+    "navigation": "导航",
+    "designBy": "网站设计：",
+    "scrollTop": "返回顶部"
+  },
+  "gallery": {
+    "gallery": "画廊",
+    "officialIllustrations": "官方插画",
+    "about": "关于",
+    "details": "详情",
+    "artTags": "标签",
+    "credits": "鸣谢",
+    "author": "作者"
+  },
+  "portfolio": {
+    "title": "作品集",
+    "demoReel": "演示片",
+    "checkOutAll": "查看我的所有",
+    "demoReels": "演示片合集",
+    "and": "和",
+    "roles": "角色",
+    "contactForm": "联系表单",
+    "contact": "联系",
+    "inquiry": "有业务咨询？请给我发邮件！",
+    "majorRoles": "主要角色",
+    "minorRoles": "次要角色"
+  },
+  "achievements": {
+    "achievements": "成就",
+    "achievementsAnd": "成就与",
+    "memories": "回忆",
+    "biography": "传记"
+  }
+}

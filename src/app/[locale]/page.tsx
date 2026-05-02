@@ -1,12 +1,21 @@
 import { CSSProperties } from "react";
 import "./home.scss";
 import Link from "next/link";
-import { FaChevronLeft, FaChevronRight, FaYoutube } from "react-icons/fa";
+import { useTranslations } from "next-intl";
+import {
+  FaChevronLeft,
+  FaChevronRight,
+  FaTwitch,
+  FaYoutube,
+} from "react-icons/fa";
 import TextStrip from "./home/textstrip/TextStrip";
 import { PiFilmSlate, PiFilmSlateFill } from "react-icons/pi";
 import HeroSection from "./home/HeroSection";
 import RecentVideos from "./home/recentVideos/RecentVideos";
+import { FaXTwitter } from "react-icons/fa6";
+import { TbLockHeart } from "react-icons/tb";
 export default function Home() {
+  const t = useTranslations("home");
   return (
     <main id="p_home">
       <HeroSection />
@@ -29,32 +38,41 @@ export default function Home() {
             <div className="r hero-content">
               <article>
                 <div className="heading">
-                  <h2 className="hlt"> Catch me live</h2>
-                  <p className="sht">on Twitch!</p>
+                  <h2 className="hlt">{t("catchMeLive")}</h2>
+                  <p className="sht">{t("onTwitch")}</p>
                 </div>
-                <p className="desc">
-                  I stream on twitch every Thursday - Sunday from 4PM - 7PM EST!
-                  If you like horror games, yappy tomboys, and ASMR streams, my
-                  stream is the right place for you~! Enjoy the chaos!
-                </p>
+                <p className="desc">{t("streamDesc")}</p>
               </article>
 
               <div className="ctb">
                 <div className="contact-list">
-                  <Link href={"https://youtube.com"} className="btn btn-ct">
+                  <Link
+                    href={"https://youtube.com/@taigatorayami"}
+                    target={"blank"}
+                    className="btn btn-ct"
+                  >
                     <FaYoutube className="icon" />
                   </Link>
-                  <Link href={"https://youtube.com"} className="btn btn-ct">
-                    <FaYoutube className="icon" />
+                  <Link
+                    href={"https://x.com/TaigaTorayami"}
+                    target={"blank"}
+                    className="btn btn-ct"
+                  >
+                    <FaXTwitter className="icon" />
                   </Link>
-                  <Link href={"https://youtube.com"} className="btn btn-ct">
-                    <FaYoutube className="icon" />
+                  <Link
+                    href={"https://twitch.tv/taigatorayami"}
+                    target={"blank"}
+                    className="btn btn-ct"
+                  >
+                    <FaTwitch className="icon" />
                   </Link>
-                  <Link href={"https://youtube.com"} className="btn btn-ct">
-                    <FaYoutube className="icon" />
-                  </Link>
-                  <Link href={"https://youtube.com"} className="btn btn-ct">
-                    <FaYoutube className="icon" />
+                  <Link
+                    href={"https://fansly.com/TaigaTorayami"}
+                    target={"blank"}
+                    className="btn btn-ct"
+                  >
+                    <TbLockHeart className="icon" />
                   </Link>
                 </div>
 
@@ -84,8 +102,8 @@ export default function Home() {
 
           <div className="cons-list">
             <div className="heading-panel">
-              <h2 className="hlt">Convention Schedule</h2>
-              <p>Come meet me and say hi in person!</p>
+              <h2 className="hlt">{t("conventionTitle")}</h2>
+              <p>{t("conventionDesc")}</p>
             </div>
 
             <div className="concontent">

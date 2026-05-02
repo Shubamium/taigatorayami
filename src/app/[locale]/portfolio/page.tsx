@@ -10,7 +10,9 @@ import { CgMail } from "react-icons/cg";
 import { TfiWrite } from "react-icons/tfi";
 import { RiMailFill } from "react-icons/ri";
 import { FaPenToSquare } from "react-icons/fa6";
+import { useTranslations } from "next-intl";
 export default function Portfolio({}: Props) {
+  const t = useTranslations("portfolio");
   return (
     <main
       id="p_portfolio"
@@ -21,16 +23,16 @@ export default function Portfolio({}: Props) {
       <section id="reel-heading">
         <h2 className="styled">
           <img src="/d/claw_light.svg" alt="" className="claw" />
-          DEMO REEL
+          {t("demoReel")}
         </h2>
         <p>
-          Check out all of my{" "}
+          {t("checkOutAll")}{" "}
           <Link className="sub act" href={"/portfolio"}>
-            DEMO REELS
+            {t("demoReels")}
           </Link>{" "}
-          and{" "}
+          {t("and")}{" "}
           <Link href={"/portfolio/roles"} className="sub">
-            ROLES!
+            {t("roles")}!
           </Link>
         </p>
       </section>
@@ -110,8 +112,8 @@ export default function Portfolio({}: Props) {
           <img src="/p/contactme.png" alt="" className="bgtext" />
           <div className="l">
             <div className="heading">
-              <h2 className="hlt">Contact</h2>
-              <p>Have a business inquiry? Email me!</p>
+              <h2 className="hlt">{t("contact")}</h2>
+              <p>{t("inquiry")}</p>
             </div>
 
             <div className="action">
@@ -122,7 +124,7 @@ export default function Portfolio({}: Props) {
               </a>
               <button className="btn btn-contact">
                 <img src="/d/texture-border_r.png" alt="" className="border" />
-                <span>CONTACT FORM</span> <FaPenToSquare />
+                <span>{t("contactForm")}</span> <FaPenToSquare />
               </button>
             </div>
           </div>

@@ -1,0 +1,60 @@
+{
+  "navigation": {
+    "title": "Hello world!",
+    "home": "Home",
+    "about": "About",
+    "gallery": "GALLERY",
+    "portfolio": "PORTFOLIO",
+    "merch": "MERCH",
+    "achievements": "ACHIEVEMENTS",
+    "contacts": "CONTACTS"
+  },
+  "textstrip": {
+    "bio": "Taiga Torayami is a VTuber, Voice Actress and Lewdtuber who debut on October 24th, 2024 🐯 Taiga has garnered over 15K on YouTube and Twitch, 100k on Twitter, and 60k on Fansly 🐯 Taiga is partnered by: Gamersupps, Kawa Entertainment, and AfterDark ! 🐯"
+  },
+  "home": {
+    "catchMeLive": "Catch me live",
+    "onTwitch": "on Twitch!",
+    "streamDesc": "I stream on twitch every Thursday - Sunday from 4PM - 7PM EST! If you like horror games, yappy tomboys, and ASMR streams, my stream is the right place for you~! Enjoy the chaos!",
+    "conventionTitle": "Convention Schedule",
+    "conventionDesc": "Come meet me and say hi in person!",
+    "recentVideosTitle": "Check out my recent videos",
+    "recentVideosSubtitle": "youtube videos!",
+    "mainChannel": "MAIN CHANNEL",
+    "vsekaiChannel": "VSEKAI CHANNEL"
+  },
+  "footer": {
+    "navigation": "NAVIGATION",
+    "rights": "© 2026 All rights reserved.",
+    "designBy": "website design by",
+    "scrollTop": "Scroll to the top"
+  },
+  "gallery": {
+    "gallery": "GALLERY",
+    "about": "ABOUT",
+    "details": "DETAILS",
+    "artTags": "ART TAGS",
+    "credits": "CREDITS",
+    "author": "AUTHOR",
+    "officialIllustrations": "OFFICIAL ILLUSTRATIONS"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "demoReel": "DEMO REEL",
+    "checkOutAll": "Check out all of my",
+    "demoReels": "DEMO REELS",
+    "and": "and",
+    "roles": "ROLES",
+    "contactForm": "CONTACT FORM",
+    "contact": "Contact",
+    "inquiry": "Have a business inquiry? Email me!",
+    "majorRoles": "Major Roles",
+    "minorRoles": "Minor Roles"
+  },
+  "achievements": {
+    "achievements": "Achievements",
+    "achievementsAnd": "Achievements &",
+    "memories": "Memories",
+    "biography": "Biography"
+  }
+}

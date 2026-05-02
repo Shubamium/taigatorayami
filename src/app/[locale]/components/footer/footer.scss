@@ -147,6 +147,8 @@
         top: 0%;
         right: -500px;
         object-fit: cover;
+        user-select: none;
+        pointer-events: none;
       }
       display: flex;
       flex-direction: column;

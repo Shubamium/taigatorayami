@@ -2,7 +2,9 @@ import React from "react";
 
 type Props = {};
 import "./achievements.scss";
+import { useTranslations } from "next-intl";
 export default function page({}: Props) {
+  const t = useTranslations("achievements");
   return (
     <main id="p_achievements">
       <div className="confine">
@@ -11,8 +13,8 @@ export default function page({}: Props) {
       <div className="special-heading">
         <img src="/d/claw_dark.svg" alt="" className="claw l" />
         <img src="/d/claw_light.svg" alt="" className="claw r" />
-        <h2 className="hlt">Achievements &</h2>
-        <p className="sht">Memories</p>
+        <h2 className="hlt">{t("achievementsAnd")}</h2>
+        <p className="sht">{t("memories")}</p>
         <hr />
       </div>
       <section id="imglist">
@@ -26,7 +28,7 @@ export default function page({}: Props) {
       <div className="circle l"></div>
       <section id="biography">
         <div className="biohead">
-          <a className="hlt">Biography</a>
+          <a className="hlt">{t("biography")}</a>
           <img src="/d/trophy.png" alt="" className="trophydecor" />
           <div className="ctrl">
             <button className="btn btn-year act">

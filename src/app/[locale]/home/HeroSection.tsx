@@ -3,10 +3,12 @@ import { useMotionValue, useScroll, useTransform } from "motion/react";
 
 import Link from "next/link";
 import React, { CSSProperties, useRef } from "react";
-import { FaYoutube } from "react-icons/fa";
+import { FaTwitch, FaYoutube } from "react-icons/fa";
 
 type Props = {};
 import { motion } from "motion/react";
+import { FaXTwitter } from "react-icons/fa6";
+import { TbLockHeart } from "react-icons/tb";
 export default function HeroSection({}: Props) {
   const heroRef = useRef(null);
   const scroll = useScroll({
@@ -78,18 +80,33 @@ export default function HeroSection({}: Props) {
             <div className="arr"></div>
           </div>
           <div className="contact-list">
-            <Link href={"https://youtube.com"} className="btn btn-ct">
+            <Link
+              href={"https://youtube.com/@taigatorayami"}
+              target={"blank"}
+              className="btn btn-ct"
+            >
               <FaYoutube className="icon" />
             </Link>
-            <Link href={"https://youtube.com"} className="btn btn-ct">
-              <FaYoutube className="icon" />
+            <Link
+              href={"https://x.com/TaigaTorayami"}
+              target={"blank"}
+              className="btn btn-ct"
+            >
+              <FaXTwitter className="icon" />
             </Link>
-            <Link href={"https://youtube.com"} className="btn btn-ct">
-              <FaYoutube className="icon" />
+            <Link
+              href={"https://twitch.tv/taigatorayami"}
+              target={"blank"}
+              className="btn btn-ct"
+            >
+              <FaTwitch className="icon" />
             </Link>
-
-            <Link href={"https://youtube.com"} className="btn btn-ct">
-              <FaYoutube className="icon" />
+            <Link
+              href={"https://fansly.com/TaigaTorayami"}
+              target={"blank"}
+              className="btn btn-ct"
+            >
+              <TbLockHeart className="icon" />
             </Link>
           </div>
         </div>

@@ -5,7 +5,9 @@ type Props = {};
 import "../portfolio.scss";
 import Link from "next/link";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
+import { useTranslations } from "next-intl";
 export default function Roles({}: Props) {
+  const t = useTranslations("portfolio");
   return (
     <main
       id="p_portfolio"
@@ -17,22 +19,22 @@ export default function Roles({}: Props) {
       <section id="reel-heading">
         <h2 className="styled">
           <img src="/d/claw_light.svg" alt="" className="claw" />
-          Roles
+          {t("roles")}
         </h2>
         <p>
-          Check out all of my{" "}
+          {t("checkOutAll")}{" "}
           <Link className="sub" href={"/portfolio"}>
-            DEMO REELS
+            {t("demoReels")}
           </Link>{" "}
           and{" "}
           <Link href={"/portfolio/roles"} className="sub act">
-            ROLES!
+            {t("roles")}!
           </Link>
         </p>
       </section>
       <section className="role-selection">
         <div className="confine panel">
-          <h2 className="hlt">Major Roles</h2>
+          <h2 className="hlt">{t("majorRoles")}</h2>
 
           <button className="btn btn-arrow l">
             <BiChevronRight />
@@ -73,7 +75,7 @@ export default function Roles({}: Props) {
       </section>
       <section className="role-selection">
         <div className="confine panel">
-          <h2 className="hlt">Minor Roles</h2>
+          <h2 className="hlt">{t("minorRoles")}</h2>
 
           <button className="btn btn-arrow l">
             <BiChevronRight />

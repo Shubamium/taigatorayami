@@ -1,0 +1,60 @@
+{
+  "navigation": {
+    "title": "Hello world!",
+    "home": "ホーム",
+    "about": "について",
+    "gallery": "ギャラリー",
+    "portfolio": "ポートフォリオ",
+    "merch": "マーチャンダイズ",
+    "achievements": "実績",
+    "contacts": "連絡先"
+  },
+  "textstrip": {
+    "bio": "虎谷未来(とらや みく)はVTuber、声優、Lewdtuberで、2024年10月24日にデビューしました🐯 虎谷はYouTubeとTwitchで15K以上、Twitterで100k、Fanslyで60kのフォロワーを獲得しました🐯 虎谷はGamersupps、Kawa Entertainment、AfterDarkのパートナーです！🐯"
+  },
+  "home": {
+    "catchMeLive": "ライブ配信を見てね",
+    "onTwitch": "Twitch で!",
+    "streamDesc": "木曜日から日曜日まで毎日 EST 4PM - 7PM にTwitchで配信しています！ホラーゲーム、喋りやすい子、ASMRストリーム好きなら、私のストリームはぴったりです~！混沌を楽しんで！",
+    "conventionTitle": "コンベンションスケジュール",
+    "conventionDesc": "直接会ってお話ししましょう！",
+    "recentVideosTitle": "最近の動画を確認してね",
+    "recentVideosSubtitle": "ユーチューブ動画！",
+    "mainChannel": "メインチャンネル",
+    "vsekaiChannel": "VSEKAI チャンネル"
+  },
+  "footer": {
+    "rights": "© 2026 無断転載禁止",
+    "navigation": "ナビゲーション",
+    "designBy": "ウェブサイトデザイン：",
+    "scrollTop": "トップへ戻る"
+  },
+  "gallery": {
+    "gallery": "ギャラリー",
+    "officialIllustrations": "公式イラスト",
+    "about": "概要",
+    "details": "詳細",
+    "artTags": "タグ",
+    "credits": "クレジット",
+    "author": "作者"
+  },
+  "portfolio": {
+    "title": "ポートフォリオ",
+    "demoReel": "デモリール",
+    "checkOutAll": "すべてを見る",
+    "demoReels": "デモリール一覧",
+    "and": "と",
+    "roles": "役割",
+    "contactForm": "お問い合わせフォーム",
+    "contact": "お問い合わせ",
+    "inquiry": "ビジネスに関するお問い合わせはメールでお願いします。",
+    "majorRoles": "主要な役",
+    "minorRoles": "サブ役"
+  },
+  "achievements": {
+    "achievements": "実績",
+    "achievementsAnd": "実績と",
+    "memories": "記録",
+    "biography": "経歴"
+  }
+}

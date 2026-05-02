@@ -4,10 +4,15 @@ type Props = {};
 
 import "./footer.scss";
 import { BiArrowToTop } from "react-icons/bi";
-import Link from "next/link";
-import { FaYoutube } from "react-icons/fa";
+import { FaTwitch, FaYoutube } from "react-icons/fa";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
+import { FaXTwitter } from "react-icons/fa6";
+import { TbLockHeart } from "react-icons/tb";
 
 export default function Footer({}: Props) {
+  const t = useTranslations("navigation");
+  const ft = useTranslations("footer");
   return (
     <footer id="footer">
       <svg
@@ -132,26 +137,26 @@ export default function Footer({}: Props) {
         <div className="l">
           <div className="nav">
             <img src="/d/coloredscratch.png" alt="" className="scratch" />
-            <h2 className="sht"> NAVIGATION</h2>
+            <h2 className="sht"> {ft("navigation")}</h2>
 
             <div className="links">
-              <Link href="/" className="btn  btn-footnav">
-                Home
+              <Link href={"/"} className={`btn btn-footnav`}>
+                {t("home")}
               </Link>
-              <Link href="/" className="btn  btn-footnav">
-                Merch
+              <Link href={"/#about"} className={`btn btn-footnav`}>
+                {t("about")}
               </Link>
-              <Link href="/" className="btn  btn-footnav">
-                Gallery
+              <Link href={"/gallery"} className={`btn btn-footnav`}>
+                {t("gallery")}
               </Link>
-              <Link href="/" className="btn  btn-footnav">
-                About
+              <Link href={"/portfolio"} className={`btn btn-footnav`}>
+                {t("portfolio")}
               </Link>
-              <Link href="/" className="btn  btn-footnav">
-                Portfolio
+              <Link href={"#"} className={`btn btn-footnav`}>
+                {t("merch")}
               </Link>
-              <Link href="/" className="btn  btn-footnav">
-                Achievements
+              <Link href={"/achievements"} className={`btn btn-footnav`}>
+                {t("achievements")}
               </Link>
               <Link
                 href="/contacts"
@@ -162,7 +167,7 @@ export default function Footer({}: Props) {
                   window.dispatchEvent(ctopenevent);
                 }}
               >
-                Contacts
+                {t("contacts")}
               </Link>
             </div>
           </div>
@@ -175,10 +180,10 @@ export default function Footer({}: Props) {
             </div>
             <p>
               <span className="t">Taiga Torayami</span>{" "}
-              <span className="copy"> © 2026 All rights reserved.</span>
+              <span className="copy">{ft("rights")}</span>
             </p>
             <p className="creds">
-              website design by
+              {ft("designBy")}
               <a href="https://x.com/shubamium2">SHUBAMIUM</a>
             </p>
           </div>
@@ -187,26 +192,39 @@ export default function Footer({}: Props) {
           <img src="/d/footershad.png" alt="" className="shad" />
 
           <button className="btn btn-top">
-            <BiArrowToTop /> Scroll to the top
+            <BiArrowToTop /> {ft("scrollTop")}
             <img src="/d/texture-borderw.png" alt="" />
           </button>
           <div className="ct">
             {/* <div className="social-contac"></div> */}
             <div className="contact-list">
-              <Link href={"https://youtube.com"} className="btn btn-ct">
+              <Link
+                href={"https://youtube.com/@taigatorayami"}
+                target={"blank"}
+                className="btn btn-ct"
+              >
                 <FaYoutube className="icon" />
               </Link>
-              <Link href={"https://youtube.com"} className="btn btn-ct">
-                <FaYoutube className="icon" />
+              <Link
+                href={"https://x.com/TaigaTorayami"}
+                target={"blank"}
+                className="btn btn-ct"
+              >
+                <FaXTwitter className="icon" />
               </Link>
-              <Link href={"https://youtube.com"} className="btn btn-ct">
-                <FaYoutube className="icon" />
+              <Link
+                href={"https://twitch.tv/taigatorayami"}
+                target={"blank"}
+                className="btn btn-ct"
+              >
+                <FaTwitch className="icon" />
               </Link>
-              <Link href={"https://youtube.com"} className="btn btn-ct">
-                <FaYoutube className="icon" />
-              </Link>
-              <Link href={"https://youtube.com"} className="btn btn-ct">
-                <FaYoutube className="icon" />
+              <Link
+                href={"https://fansly.com/TaigaTorayami"}
+                target={"blank"}
+                className="btn btn-ct"
+              >
+                <TbLockHeart className="icon" />
               </Link>
             </div>
           </div>
