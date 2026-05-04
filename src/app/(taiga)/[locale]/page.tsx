@@ -126,7 +126,7 @@ export default async function Home() {
               className="mainart"
             />
           </div>
-
+          <></>
           <div className="cons-list">
             <div className="heading-panel">
               <h2 className="hlt">{t("conventionTitle")}</h2>
