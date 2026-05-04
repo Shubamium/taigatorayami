@@ -69,7 +69,6 @@ export default async function RootLayout({
               <ContactPopUp />
               <Header />
               {children}
-
               <Footer />
             </ReactLenis>
           </NextIntlClientProvider>
