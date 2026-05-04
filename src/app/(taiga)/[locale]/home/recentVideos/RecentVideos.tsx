@@ -4,17 +4,25 @@ import { getTranslations } from "next-intl/server";
 import { FaChevronLeft, FaChevronRight, FaYoutube } from "react-icons/fa";
 import { PiFilmSlateFill } from "react-icons/pi";
 import VidCarousel from "./VidCarousel";
+import { unstable_cache } from "next/cache";
 
 type Props = {};
-
+const getCahedRecentVids = unstable_cache(
+  async (channelId: string) => getRecentVids(channelId),
+  ["video"],
+  {
+    revalidate: 3600 * 24,
+  },
+);
 export default async function RecentVideos({}: Props) {
   const t = await getTranslations("home");
   const env = process.env.NODE_ENV;
-  let data = [];
-  data =
-    env === "production"
-      ? await getRecentVids(process.env.YT_ID ?? "")
-      : await getRecentMockVId(process.env.YT_ID ?? "");
+
+  let data =
+    env == "production"
+      ? await getCahedRecentVids(process.env.YT_ID ?? "")
+      : await getRecentMockVId();
+  // let data = await getCahedRecentVids(process.env.YT_ID ?? "");
   return (
     <section id="recent-videos">
       <img src="/d/videostroke.png" alt="" className="bgstroke" />

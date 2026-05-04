@@ -70,9 +70,13 @@
             rotate: 360deg;
           }
         }
-        animation: speen 10s infinite linear;
       }
 
+      &.isPlaying {
+        .cd {
+          animation: speen 10s infinite linear;
+        }
+      }
       .btn-audio {
         width: 60px;
         background: white;

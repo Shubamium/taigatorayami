@@ -56,5 +56,15 @@
     "achievementsAnd": "成就与",
     "memories": "回忆",
     "biography": "传记"
+  },
+  "contact": {
+    "contact": "联系",
+    "inquiry": "有商务咨询？需要联系我？",
+    "use": "使用此联系表单向我发送电子邮件！",
+    "name": "姓名",
+    "email": "邮箱",
+    "name_p": "在此填写您的姓名！",
+    "email_p": "在此填写您的邮箱！",
+    "send": "发送邮件"
   }
 }

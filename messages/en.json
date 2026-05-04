@@ -56,5 +56,15 @@
     "achievementsAnd": "Achievements &",
     "memories": "Memories",
     "biography": "Biography"
+  },
+  "contact": {
+    "contact": "Contact",
+    "inquiry": "Have a business inquiry? Need to get in contact?",
+    "use": "Use this contact section to send me an email!",
+    "name": "Name",
+    "email": "Email",
+    "name_p": "Write your name here!",
+    "email_p": "Write your email here!",
+    "send": "SEND EMAIL"
   }
 }

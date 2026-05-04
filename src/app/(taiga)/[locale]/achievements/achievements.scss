@@ -30,9 +30,7 @@
 
     max-width: 1400px;
     margin: 0 auto;
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 2em;
+
     overflow: hidden;
     mask-image: linear-gradient(
       to right,
@@ -41,6 +39,15 @@
       white 90%,
       transparent 100%
     );
+
+    .achievementslide {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 2em;
+      .achievement-img {
+        height: 400px;
+      }
+    }
   }
 
   .circle {

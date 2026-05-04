@@ -1,12 +1,16 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
-type Props = {};
+type Props = {
+  formData: any[];
+};
 
 import "./contactPopUp.scss";
 import { FaPenToSquare } from "react-icons/fa6";
 import Link from "next/link";
-export default function ContactPopUp({}: Props) {
+import { RichText } from "@payloadcms/richtext-lexical/react";
+import ReactLenis from "lenis/react";
+export default function ContactPopUp({ formData }: Props) {
   const [visible, setVisible] = useState(false);
 
   const togglePopup = () => {
@@ -29,8 +33,9 @@ export default function ContactPopUp({}: Props) {
           <h2>CONTACT T.O.S.</h2>
           <hr />
         </div>
-        <div className="content">
-          <strong>IMPORTANT</strong>
+        <ReactLenis className="content">
+          <RichText data={formData as any} />
+          {/* <strong>IMPORTANT</strong>
           <p>
             Please review the information below carefully before submitting your
             email. Kindly note that Taiga reserves the right to decline or not
@@ -49,15 +54,15 @@ export default function ContactPopUp({}: Props) {
             smooth communication throughout the process. If appli
           </p>
           <p>
-            cable, provide links to your company, channel, or prior work to
+             provide links to your company, channel, or prior work to
             establish credibility. All information submitted should be accurate
             and verifiable. Vague or incomplete proposals may not be considered.
             Please note that Taiga is not accepting any merchandise-related
             proposals at this time. Any inquiries regarding merchandise, product
             lines, or similar collaborations will be disregarded until January
             2027.
-          </p>
-        </div>
+          </p> */}
+        </ReactLenis>
 
         <div className="footer">
           <Link href={"/contact"} className="btn btn-contact">

@@ -1,12 +1,10 @@
 "use server";
 
 import { youtube } from "@googleapis/youtube";
-import { cacheLife } from "next/cache";
-
 // Expected Result is list of recent video id given a channel id
 export async function getRecentVids(channelId: string) {
-  "use cache";
-  cacheLife("days");
+  // "use cache";
+  // cacheLife("days");
   const yt = youtube({
     version: "v3",
     auth: process.env.YTAPI,
@@ -26,9 +24,9 @@ export async function getRecentVids(channelId: string) {
 
   const vidIds = data.items?.map((item: any) => item.id.videoId);
   const titleList = data.items?.map((item: any) => item.snippet.title);
-  return [vidIds, titleList];
+  return [vidIds, titleList] as string[][];
 }
-export async function getRecentMockVId(channelId: string) {
+export async function getRecentMockVId() {
   const ytVidIds = [
     "dZ6JyD0ZK4A",
     "V4j7EiHm0m4",

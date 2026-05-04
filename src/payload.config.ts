@@ -16,6 +16,7 @@ import { Home } from "./collections/globals/Home";
 import { Portfolio } from "./collections/globals/Portfolio";
 import { Gallery } from "./collections/globals/Gallery";
 import { Achievements } from "./collections/globals/Achievements";
+import { Contact } from "./collections/globals/Contact";
 export default buildConfig({
   admin: {
     user: Users.slug,
@@ -24,7 +25,7 @@ export default buildConfig({
     },
   },
   collections: [Users, Media],
-  globals: [Home, Portfolio, Gallery, Achievements],
+  globals: [Home, Portfolio, Gallery, Achievements, Contact],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {

@@ -54,5 +54,9 @@ export const Portfolio: GlobalConfig = {
       type: "upload",
       relationTo: "media",
     },
+    {
+      name: "contactEmail",
+      type: "text",
+    },
   ],
 };

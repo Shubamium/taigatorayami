@@ -16,6 +16,12 @@ export const Home: GlobalConfig = {
       required: true,
     },
     {
+      name: "conventionArt",
+      type: "upload",
+      relationTo: "media",
+      required: true,
+    },
+    {
       name: "conventionSchedules",
       type: "array",
       fields: [

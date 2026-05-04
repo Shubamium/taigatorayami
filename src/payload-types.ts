@@ -92,12 +92,14 @@ export interface Config {
     portfolio: Portfolio;
     gallery: Gallery;
     achievements: Achievement;
+    contact: Contact;
   };
   globalsSelect: {
     home: HomeSelect<false> | HomeSelect<true>;
     portfolio: PortfolioSelect<false> | PortfolioSelect<true>;
     gallery: GallerySelect<false> | GallerySelect<true>;
     achievements: AchievementsSelect<false> | AchievementsSelect<true>;
+    contact: ContactSelect<false> | ContactSelect<true>;
   };
   locale: null;
   widgets: {
@@ -393,6 +395,7 @@ export interface Home {
   id: string;
   heroArt: string | Media;
   aboutArt: string | Media;
+  conventionArt: string | Media;
   conventionSchedules?:
     | {
         name?: string | null;
@@ -432,6 +435,7 @@ export interface Portfolio {
       }[]
     | null;
   portfolioContactArt?: (string | null) | Media;
+  contactEmail?: string | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -500,11 +504,36 @@ export interface Achievement {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contact".
+ */
+export interface Contact {
+  id: string;
+  contactNotice?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "home_select".
  */
 export interface HomeSelect<T extends boolean = true> {
   heroArt?: T;
   aboutArt?: T;
+  conventionArt?: T;
   conventionSchedules?:
     | T
     | {
@@ -544,6 +573,7 @@ export interface PortfolioSelect<T extends boolean = true> {
         id?: T;
       };
   portfolioContactArt?: T;
+  contactEmail?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
@@ -593,6 +623,16 @@ export interface AchievementsSelect<T extends boolean = true> {
             };
         id?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contact_select".
+ */
+export interface ContactSelect<T extends boolean = true> {
+  contactNotice?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

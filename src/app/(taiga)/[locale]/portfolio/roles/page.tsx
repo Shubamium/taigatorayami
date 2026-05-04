@@ -5,9 +5,17 @@ type Props = {};
 import "../portfolio.scss";
 import Link from "next/link";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
-import { useTranslations } from "next-intl";
-export default function Roles({}: Props) {
-  const t = useTranslations("portfolio");
+import { getTranslations } from "next-intl/server";
+import { getPayload } from "payload";
+import config from "@/payload.config";
+import RoleCarousel from "./RoleCarousel";
+
+export default async function Roles({}: Props) {
+  const t = await getTranslations("portfolio");
+  const payloadConfig = await config;
+  const payload = await getPayload({ config: payloadConfig });
+  const portfolioData = await payload.findGlobal({ slug: "portfolio" });
+
   return (
     <main
       id="p_portfolio"
@@ -36,82 +44,94 @@ export default function Roles({}: Props) {
         <div className="confine panel">
           <h2 className="hlt">{t("majorRoles")}</h2>
 
-          <button className="btn btn-arrow l">
-            <BiChevronRight />
-          </button>
-          <div className="roles">
-            <div className="role">
-              <img src="/g/pfpplaceholder.png" alt="" className="pfp" />
-              <p>COMING SOON</p>
-            </div>
-            <hr />
-            <div className="role">
-              <img src="/g/pfpplaceholder.png" alt="" className="pfp" />
-              <p>COMING SOON</p>
-            </div>
-            <hr />
+          {portfolioData.majorRoles && portfolioData.majorRoles.length > 0 ? (
+            <RoleCarousel roles={portfolioData.majorRoles as any} />
+          ) : (
+            <>
+              <button className="btn btn-arrow l">
+                <BiChevronRight />
+              </button>
+              <div className="roles">
+                <div className="role">
+                  <img src="/g/pfpplaceholder.png" alt="" className="pfp" />
+                  <p>COMING SOON</p>
+                </div>
+                <hr />
+                <div className="role">
+                  <img src="/g/pfpplaceholder.png" alt="" className="pfp" />
+                  <p>COMING SOON</p>
+                </div>
+                <hr />
 
-            <div className="role">
-              <img src="/g/pfpplaceholder.png" alt="" className="pfp" />
-              <p>COMING SOON</p>
-            </div>
-            <hr />
+                <div className="role">
+                  <img src="/g/pfpplaceholder.png" alt="" className="pfp" />
+                  <p>COMING SOON</p>
+                </div>
+                <hr />
 
-            <div className="role">
-              <img src="/g/pfpplaceholder.png" alt="" className="pfp" />
-              <p>COMING SOON</p>
-            </div>
-            <hr />
+                <div className="role">
+                  <img src="/g/pfpplaceholder.png" alt="" className="pfp" />
+                  <p>COMING SOON</p>
+                </div>
+                <hr />
 
-            <div className="role">
-              <img src="/g/pfpplaceholder.png" alt="" className="pfp" />
-              <p>COMING SOON</p>
-            </div>
-          </div>
-          <button className="btn btn-arrow r">
-            <BiChevronLeft />
-          </button>
+                <div className="role">
+                  <img src="/g/pfpplaceholder.png" alt="" className="pfp" />
+                  <p>COMING SOON</p>
+                </div>
+              </div>
+              <button className="btn btn-arrow r">
+                <BiChevronLeft />
+              </button>
+            </>
+          )}
         </div>
       </section>
       <section className="role-selection">
         <div className="confine panel">
           <h2 className="hlt">{t("minorRoles")}</h2>
 
-          <button className="btn btn-arrow l">
-            <BiChevronRight />
-          </button>
-          <div className="roles">
-            <div className="role">
-              <img src="/g/pfpplaceholder.png" alt="" className="pfp" />
-              <p>COMING SOON</p>
-            </div>
-            <hr />
-            <div className="role">
-              <img src="/g/pfpplaceholder.png" alt="" className="pfp" />
-              <p>COMING SOON</p>
-            </div>
-            <hr />
+          {portfolioData.minorRoles && portfolioData.minorRoles.length > 0 ? (
+            <RoleCarousel roles={portfolioData.minorRoles as any} />
+          ) : (
+            <>
+              <button className="btn btn-arrow l">
+                <BiChevronRight />
+              </button>
+              <div className="roles">
+                <div className="role">
+                  <img src="/g/pfpplaceholder.png" alt="" className="pfp" />
+                  <p>COMING SOON</p>
+                </div>
+                <hr />
+                <div className="role">
+                  <img src="/g/pfpplaceholder.png" alt="" className="pfp" />
+                  <p>COMING SOON</p>
+                </div>
+                <hr />
 
-            <div className="role">
-              <img src="/g/pfpplaceholder.png" alt="" className="pfp" />
-              <p>COMING SOON</p>
-            </div>
-            <hr />
+                <div className="role">
+                  <img src="/g/pfpplaceholder.png" alt="" className="pfp" />
+                  <p>COMING SOON</p>
+                </div>
+                <hr />
 
-            <div className="role">
-              <img src="/g/pfpplaceholder.png" alt="" className="pfp" />
-              <p>COMING SOON</p>
-            </div>
-            <hr />
+                <div className="role">
+                  <img src="/g/pfpplaceholder.png" alt="" className="pfp" />
+                  <p>COMING SOON</p>
+                </div>
+                <hr />
 
-            <div className="role">
-              <img src="/g/pfpplaceholder.png" alt="" className="pfp" />
-              <p>COMING SOON</p>
-            </div>
-          </div>
-          <button className="btn btn-arrow r">
-            <BiChevronLeft />
-          </button>
+                <div className="role">
+                  <img src="/g/pfpplaceholder.png" alt="" className="pfp" />
+                  <p>COMING SOON</p>
+                </div>
+              </div>
+              <button className="btn btn-arrow r">
+                <BiChevronLeft />
+              </button>
+            </>
+          )}
         </div>
       </section>
     </main>

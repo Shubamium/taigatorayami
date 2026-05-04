@@ -2,9 +2,18 @@ import React from "react";
 
 type Props = {};
 import "./achievements.scss";
-import { useTranslations } from "next-intl";
-export default function page({}: Props) {
-  const t = useTranslations("achievements");
+import { getTranslations } from "next-intl/server";
+import { getPayload } from "payload";
+import config from "@/payload.config";
+import AchievementsCarousel from "./AchievementsCarousel";
+import BiographyYearSwitcher from "./BiographyYearSwitcher";
+
+export default async function page({}: Props) {
+  const t = await getTranslations("achievements");
+  const payloadConfig = await config;
+  const payload = await getPayload({ config: payloadConfig });
+  const achievementsData = await payload.findGlobal({ slug: "achievements" });
+
   return (
     <main id="p_achievements">
       <div className="confine">
@@ -18,15 +27,24 @@ export default function page({}: Props) {
         <hr />
       </div>
       <section id="imglist">
-        <img src="/g/refsheetph.png" alt="" />
-        <img src="/g/refsheetph.png" alt="" />
-        <img src="/g/refsheetph.png" alt="" />
-        <img src="/g/refsheetph.png" alt="" />
+        {achievementsData.achievementList &&
+        achievementsData.achievementList.length > 0 ? (
+          <AchievementsCarousel
+            achievements={achievementsData.achievementList}
+          />
+        ) : (
+          <>
+            <img src="/g/refsheetph.png" alt="" />
+            <img src="/g/refsheetph.png" alt="" />
+            <img src="/g/refsheetph.png" alt="" />
+            <img src="/g/refsheetph.png" alt="" />
+          </>
+        )}
       </section>
 
       <div className="circle r"></div>
       <div className="circle l"></div>
-      <section id="biography">
+      {/* <section id="biography">
         <div className="biohead">
           <a className="hlt">{t("biography")}</a>
           <img src="/d/trophy.png" alt="" className="trophydecor" />
@@ -65,7 +83,8 @@ export default function page({}: Props) {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+      <BiographyYearSwitcher biography={achievementsData.biography as any} />
     </main>
   );
 }

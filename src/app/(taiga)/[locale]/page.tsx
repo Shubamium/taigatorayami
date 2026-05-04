@@ -1,7 +1,7 @@
 import { CSSProperties } from "react";
 import "./home.scss";
 import Link from "next/link";
-import { useTranslations } from "next-intl";
+// import { useTranslations } from "next-intl";
 import {
   FaChevronLeft,
   FaChevronRight,
@@ -14,11 +14,25 @@ import HeroSection from "./home/HeroSection";
 import RecentVideos from "./home/recentVideos/RecentVideos";
 import { FaXTwitter } from "react-icons/fa6";
 import { TbLockHeart } from "react-icons/tb";
-export default function Home() {
-  const t = useTranslations("home");
+import { getPayload } from "payload";
+import config from "@/payload.config";
+import { Media } from "@/payload-types";
+import { getTranslations } from "next-intl/server";
+
+export default async function Home() {
+  const t = await getTranslations("home");
+  const payloadConfig = await config;
+  const payload = await getPayload({ config: payloadConfig });
+  const homeData = await payload.findGlobal({ slug: "home" });
   return (
     <main id="p_home">
-      <HeroSection />
+      <HeroSection
+        heroArt={
+          typeof homeData.heroArt === "object"
+            ? ((homeData.heroArt as Media)?.url ?? undefined)
+            : undefined
+        }
+      />
       <TextStrip />
       <img src="/d/section-line.svg" alt="" className="sectionline" />
       <section id="about">
@@ -31,7 +45,15 @@ export default function Home() {
             <img src="/d/scratchcircle.png" alt="" className="circ" />
             <img src="/d/catchborder.png" alt="" className="catchborder" />
             <img src="/d/catcharrr.png" alt="" className="catcharr" />
-            <img src="/g/aboutart.png" alt="" className="aboutart" />
+
+            {/* About ARt */}
+            {typeof homeData.aboutArt === "object" && (
+              <img
+                src={(homeData.aboutArt as Media)?.url ?? ""}
+                alt=""
+                className="aboutart"
+              />
+            )}
           </div>
           <div className="text">
             <div className="l"></div>
@@ -78,7 +100,7 @@ export default function Home() {
 
                 <div className="twitch-li">
                   <iframe
-                    src="https://www.player.twitch.tv/?channel=TaigaTorayami&parent=localhost"
+                    src="https://www.player.twitch.tv/?channel=TaigaTorayami&parent=https://taigatorayami.com"
                     allowFullScreen
                     allow="encrypted-media *;"
                   ></iframe>
@@ -97,7 +119,12 @@ export default function Home() {
           <img src="/d/coloredscratch.png" alt="" className="scratch tr" />
           <img src="/d/coloredscratch.png" alt="" className="scratch bl" />
           <div className="art">
-            <img src="/p/consart.png" alt="" />
+            <img src="/g/conbgpanel.png" alt="" className="conbg" />
+            <img
+              src={(homeData.conventionArt as Media)?.url ?? undefined}
+              alt=""
+              className="mainart"
+            />
           </div>
 
           <div className="cons-list">
@@ -111,26 +138,46 @@ export default function Home() {
                 <img src="/d/conline.svg" alt="" />
               </div>
               <div className="list">
-                <div className="con">
-                  <img src="/g/conplaceholder.png" alt="" className="img" />
-                  <img src="/d/conpin.png" alt="" className="pin" />
-                  <h2 className="sht">TBA</h2>
-                  <p className="sht">December 12-14 2025</p>
-                </div>
+                {homeData.conventionSchedules &&
+                homeData.conventionSchedules.length > 0 ? (
+                  homeData.conventionSchedules.map((schedule, index) => (
+                    <div key={index} className="con">
+                      {typeof schedule.image === "object" && (
+                        <img
+                          src={(schedule.image as Media)?.url ?? undefined}
+                          alt={schedule.image?.alt || ""}
+                          className="img"
+                        />
+                      )}
+                      <img src="/d/conpin.png" alt="" className="pin" />
+                      <h2 className="sht">{schedule.name}</h2>
+                      <p className="sht">{schedule.date}</p>
+                    </div>
+                  ))
+                ) : (
+                  <>
+                    <div className="con">
+                      <img src="/g/conplaceholder.png" alt="" className="img" />
+                      <img src="/d/conpin.png" alt="" className="pin" />
+                      <h2 className="sht">TBA</h2>
+                      <p className="sht">December 12-14 2025</p>
+                    </div>
 
-                <div className="con">
-                  <img src="/g/conplaceholder.png" alt="" className="img" />
-                  <img src="/d/conpin.png" alt="" className="pin" />
-                  <h2 className="sht">TBA</h2>
-                  <p className="sht">December 12-14 2025</p>
-                </div>
+                    <div className="con">
+                      <img src="/g/conplaceholder.png" alt="" className="img" />
+                      <img src="/d/conpin.png" alt="" className="pin" />
+                      <h2 className="sht">TBA</h2>
+                      <p className="sht">December 12-14 2025</p>
+                    </div>
 
-                <div className="con">
-                  <img src="/g/conplaceholder.png" alt="" className="img" />
-                  <img src="/d/conpin.png" alt="" className="pin" />
-                  <h2 className="sht">TBA</h2>
-                  <p className="sht">December 12-14 2025</p>
-                </div>
+                    <div className="con">
+                      <img src="/g/conplaceholder.png" alt="" className="img" />
+                      <img src="/d/conpin.png" alt="" className="pin" />
+                      <h2 className="sht">TBA</h2>
+                      <p className="sht">December 12-14 2025</p>
+                    </div>
+                  </>
+                )}
               </div>
             </div>
           </div>

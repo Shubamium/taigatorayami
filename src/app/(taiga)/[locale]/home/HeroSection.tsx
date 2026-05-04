@@ -5,11 +5,13 @@ import Link from "next/link";
 import React, { CSSProperties, useRef } from "react";
 import { FaTwitch, FaYoutube } from "react-icons/fa";
 
-type Props = {};
+type Props = {
+  heroArt?: string;
+};
 import { motion } from "motion/react";
 import { FaXTwitter } from "react-icons/fa6";
 import { TbLockHeart } from "react-icons/tb";
-export default function HeroSection({}: Props) {
+export default function HeroSection({ heroArt = "/g/heroart.png" }: Props) {
   const heroRef = useRef(null);
   const scroll = useScroll({
     target: heroRef,
@@ -40,11 +42,12 @@ export default function HeroSection({}: Props) {
           <hr />
         </div>
         <div className="art">
+          {/* Hero Section Art */}
           <motion.img
             style={{
               y: pushTransform,
             }}
-            src="/g/heroart.png"
+            src={heroArt}
             alt=""
             className="heroart"
           />
