@@ -1,7 +1,7 @@
 "use client";
 import { useMotionValue, useScroll, useTransform } from "motion/react";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import React, { CSSProperties, useRef } from "react";
 import { FaTwitch, FaYoutube } from "react-icons/fa";
 

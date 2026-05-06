@@ -3,7 +3,7 @@ import React from "react";
 type Props = {};
 
 import "../portfolio.scss";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import { getTranslations } from "next-intl/server";
 import { getPayload } from "payload";

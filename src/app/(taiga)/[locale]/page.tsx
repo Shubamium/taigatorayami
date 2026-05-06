@@ -1,6 +1,6 @@
 import { CSSProperties } from "react";
 import "./home.scss";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 // import { useTranslations } from "next-intl";
 import {
   FaChevronLeft,
@@ -100,7 +100,7 @@ export default async function Home() {
 
                 <div className="twitch-li">
                   <iframe
-                    src="https://www.player.twitch.tv/?channel=TaigaTorayami&parent=https://taigatorayami.com"
+                    src={`https://player.twitch.tv/?&channel=taigatorayami&parent=${process.env.NEXT_PUBLIC_SITE_URL}`}
                     allowFullScreen
                     allow="encrypted-media *;"
                   ></iframe>

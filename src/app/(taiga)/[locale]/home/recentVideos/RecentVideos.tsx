@@ -1,5 +1,5 @@
 import { getRecentMockVId, getRecentVids } from "@/function/ytapi";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { getTranslations } from "next-intl/server";
 import { FaChevronLeft, FaChevronRight, FaYoutube } from "react-icons/fa";
 import { PiFilmSlateFill } from "react-icons/pi";

@@ -21,7 +21,9 @@
       position: absolute;
       height: 800px;
       width: 70px;
-
+      @media screen and (max-width: 1024px) {
+        display: none;
+      }
       &.t {
         border-left: 1px solid white;
         border-top: 1px solid white;
@@ -144,10 +146,12 @@
       grid-template-columns: 3fr 1fr;
       height: min(1080px, 96vh);
       // background: rgb(14, 14, 14);
+
       align-items: flex-end;
       justify-content: flex-end;
       position: relative;
-
+      @media screen and (max-width: 550px) {
+      }
       .sideline {
         position: absolute;
         right: 0%;
@@ -215,6 +219,10 @@
         transform: translateX(50%);
         right: 25%;
         bottom: 0%;
+        @media screen and (max-width: 550px) {
+          right: 50%;
+          width: 100%;
+        }
         img {
           width: 100%;
           object-fit: cover;
@@ -224,8 +232,19 @@
       }
 
       // Full screen main text part
+      .ctatext-container {
+        @media screen and (max-width: 1024px) {
+          width: 100%;
+        }
+      }
       .cta {
         padding-bottom: 50px;
+        @media screen and (max-width: 768px) {
+          width: 100%;
+          position: absolute;
+          left: 0%;
+          bottom: 0%;
+        }
         .subtitle {
           font-size: 2.5rem;
           color: #b1b1b1;
@@ -233,7 +252,9 @@
           align-items: center;
           gap: 1em;
           padding-bottom: 0.2em;
-
+          @media screen and (max-width: 1024px) {
+            font-size: 1.5rem;
+          }
           font-weight: 300;
           p {
             white-space: nowrap;
@@ -275,10 +296,17 @@
         flex-direction: column;
         align-items: center;
         gap: 2em;
+        @media screen and (max-width: 1024px) {
+          top: 100px;
+        }
         .arrow-list {
           .arr {
             width: 20px;
             height: 20px;
+            @media screen and (max-width: 1024px) {
+              width: 10px;
+              height: 10px;
+            }
             background: var(--orange);
             clip-path: polygon(50% 80%, 0 0, 100% 0);
             &:nth-child(even) {
@@ -291,6 +319,13 @@
           display: flex;
           flex-direction: column;
           gap: 0.7em;
+          @media screen and (max-width: 1280px) {
+            justify-content: flex-start;
+            flex-direction: row;
+          }
+          @media screen and (max-width: 768px) {
+            flex-direction: column;
+          }
         }
       }
     }
@@ -322,6 +357,12 @@
         color: #b2b2b2;
         width: 100%;
         font-size: 1.2rem;
+        @media screen and (max-width: 1024px) {
+          font-size: 1rem;
+        }
+        @media screen and (max-width: 550px) {
+          font-size: 0.8rem;
+        }
       }
     }
   }
@@ -387,6 +428,18 @@
       padding-top: 50px;
       padding-right: 50px;
       position: relative;
+      @media screen and (max-width: 1024px) {
+        padding: 1em;
+      }
+      @media screen and (max-width: 1024px) {
+        height: 200vh;
+      }
+      @media screen and (max-width: 768px) {
+        height: 1280px;
+      }
+      @media screen and (max-width: 350px) {
+        height: 1000px;
+      }
       .art {
         // background: red;
         position: absolute;
@@ -409,6 +462,18 @@
           left: -20%;
           height: 100%;
           object-fit: contain;
+
+          @media screen and (max-width: 1440px) {
+            left: -30%;
+          }
+          @media screen and (max-width: 1024px) {
+            bottom: 0%;
+            height: 800px;
+          }
+          @media screen and (max-width: 768px) {
+            height: 600px;
+            left: -50%;
+          }
         }
         .catchborder {
           position: absolute;
@@ -426,22 +491,43 @@
       .text {
         position: relative;
         z-index: 100;
+        display: flex;
+        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: flex-end;
         .l {
           width: 100%;
+          @media screen and (max-width: 1024px) {
+            display: none;
+          }
         }
         text-align: right;
+        @media screen and (max-width: 1024px) {
+          display: block;
+        }
         .hero-content {
           display: flex;
           flex-direction: column;
           align-items: flex-end;
+          @media screen and (max-width: 1024px) {
+            width: 100%;
+          }
           article {
             max-width: 600px;
             margin-bottom: 100px;
+            @media screen and (max-width: 420px) {
+              margin-bottom: 50px;
+            }
           }
           .ctb {
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
+            @media screen and (max-width: 1024px) {
+              width: 100%;
+              align-items: flex-end;
+            }
             .contact-list {
               margin-bottom: 1em;
               display: flex;
@@ -450,12 +536,28 @@
               .btn-ct {
                 width: 60px;
                 height: 60px;
+                @media screen and (max-width: 768px) {
+                  width: 40px;
+                  height: 40px;
+                }
+                @media screen and (max-width: 550px) {
+                }
               }
             }
 
             .twitch-li {
+              @media screen and (max-width: 1024px) {
+                width: 80%;
+              }
+              @media screen and (max-width: 550px) {
+                width: 100%;
+              }
               iframe {
                 width: 700px;
+                @media screen and (max-width: 1024px) {
+                  width: 100%;
+                }
+
                 aspect-ratio: 16 / 9;
                 border: 3px solid #222222;
               }
@@ -463,15 +565,24 @@
           }
         }
 
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        justify-items: flex-end;
         .heading {
           .hlt {
             font-size: 5rem;
+            @media screen and (max-width: 1024px) {
+              font-size: 3rem;
+            }
+            @media screen and (max-width: 420px) {
+              font-size: 2rem;
+            }
           }
           .sht {
             font-size: 5rem;
+            @media screen and (max-width: 1024px) {
+              font-size: 3rem;
+            }
+            @media screen and (max-width: 420px) {
+              font-size: 2rem;
+            }
           }
         }
 
@@ -479,6 +590,9 @@
           font-size: 1.2rem;
           margin: 1em 0;
           color: #b1b1b1;
+          @media screen and (max-width: 420px) {
+            font-size: 0.9rem;
+          }
         }
       }
     }
@@ -489,6 +603,9 @@
     margin-top: 0px;
     padding-top: 100px;
     padding-bottom: 100px;
+    @media screen and (max-width: 550px) {
+      padding-block: 50px;
+    }
     mask-image: linear-gradient(
       to bottom,
       transparent 0%,
@@ -508,6 +625,50 @@
       margin: 0 auto;
 
       .special-heading {
+        @media screen and (max-width: 1280px) {
+          width: 100%;
+          .claw {
+            &.l {
+              left: -50px;
+              top: 0%;
+            }
+            &.r {
+              right: -50px;
+              top: 0%;
+            }
+            width: 120px;
+            height: 120px;
+          }
+          .hlt {
+            font-size: 3rem;
+          }
+          .sht {
+            font-size: 3rem;
+          }
+        }
+        @media screen and (max-width: 768px) {
+          .claw {
+            &.l {
+              left: -50px;
+              top: -20%;
+            }
+            &.r {
+              right: -50px;
+              top: -20%;
+            }
+            width: 70px;
+            height: 60px;
+          }
+          .hlt {
+            font-size: 2rem;
+          }
+          .sht {
+            font-size: 2rem;
+          }
+          hr {
+            margin: 0.25em 0;
+          }
+        }
       }
       .video-carousel {
         width: 100%;
@@ -534,6 +695,12 @@
           height: 300px;
           border: 1px solid #bcbcbc;
           position: relative;
+          @media screen and (max-width: 550px) {
+            height: 200px;
+          }
+          @media screen and (max-width: 420px) {
+            height: 150px;
+          }
           .thumbnail {
             object-fit: cover;
             width: 100%;
@@ -584,6 +751,16 @@
           background: var(--orange);
           border-radius: 1em;
           padding: 1em;
+          @media screen and (max-width: 420px) {
+            width: 30px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.4em;
+            border-radius: 0;
+          }
+
           &.btn-r {
             position: absolute;
             right: 0%;
@@ -607,6 +784,13 @@
         align-items: center;
         gap: 2em;
         margin: 2em 0;
+        @media screen and (max-width: 768px) {
+          gap: 1em;
+        }
+        @media screen and (max-width: 420px) {
+          flex-direction: column;
+          padding: 1em;
+        }
         .btn-ct {
           position: relative;
           padding: 0.5em 1em;
@@ -615,6 +799,16 @@
           gap: 2em;
           font-size: 2rem;
           background: rgb(27, 27, 27) url("/b/grunge1_13.png");
+          @media screen and (max-width: 1024px) {
+            font-size: 1.5rem;
+          }
+          @media screen and (max-width: 768px) {
+            font-size: 1.2rem;
+            gap: 1em;
+          }
+          @media screen and (max-width: 420px) {
+            width: 100%;
+          }
 
           .icon,
           p {
@@ -654,6 +848,9 @@
   #cons {
     padding-block: 100px;
     position: relative;
+    @media screen and (max-width: 1280px) {
+      padding-block: 50px;
+    }
     overflow: hidden;
     .chains {
       &.tb {
@@ -701,6 +898,10 @@
       grid-template-columns: 1.5fr 3fr;
       max-width: 1440px;
       gap: 1em;
+      @media screen and (max-width: 1024px) {
+        display: flex;
+        flex-direction: column-reverse;
+      }
 
       .scratch {
         width: 200px;
@@ -755,6 +956,9 @@
           width: 70%;
 
           position: relative;
+          @media screen and (max-width: 768px) {
+            width: 90%;
+          }
           &::before {
             content: "";
             position: absolute;
@@ -773,6 +977,11 @@
             font-size: 3rem;
             padding: 0 0.25em;
             width: max-content;
+
+            @media screen and (max-width: 768px) {
+              width: auto;
+              font-size: 1.5rem;
+            }
           }
         }
 
@@ -780,9 +989,14 @@
           display: grid;
           grid-template-columns: 80px 1fr;
           padding-left: 20px;
+          @media screen and (max-width: 1024px) {
+            grid-template-columns: 40px 1fr;
+            padding-left: 10px;
+          }
 
           .line {
             height: 400px;
+
             img {
               width: 100%;
               height: 100%;
@@ -805,6 +1019,10 @@
               max-width: 80%;
               z-index: 1;
               background: black;
+
+              @media screen and (max-width: 768px) {
+                max-width: 95%;
+              }
               &::after {
                 width: 40px;
                 height: 40px;
@@ -836,9 +1054,15 @@
               transition: all 500ms ease;
               .sht {
                 filter: drop-shadow(0px 0px 4px black);
+                @media screen and (max-width: 550px) {
+                  font-size: 0.9rem;
+                }
               }
               h2 {
                 font-size: 2.4rem;
+                @media screen and (max-width: 550px) {
+                  font-size: 1.4rem;
+                }
               }
               &::before {
                 content: "";

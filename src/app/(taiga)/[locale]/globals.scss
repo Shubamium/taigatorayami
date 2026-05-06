@@ -77,6 +77,9 @@ a {
 .confine {
   max-width: min(1800px, 95%);
   margin: 0 auto;
+  @media screen and (max-width: 1024px) {
+    max-width: 100%;
+  }
 }
 
 .sht {

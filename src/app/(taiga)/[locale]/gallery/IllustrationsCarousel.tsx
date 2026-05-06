@@ -3,7 +3,7 @@
 import useInfiniteScroll from "@/function/useInfiniteScroll";
 import { Media } from "@/payload-types";
 import { motion } from "motion/react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 type Props = {
   illustrations: Array<{

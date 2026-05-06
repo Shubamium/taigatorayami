@@ -7,7 +7,7 @@ type Props = {
 
 import "./contactPopUp.scss";
 import { FaPenToSquare } from "react-icons/fa6";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { RichText } from "@payloadcms/richtext-lexical/react";
 import ReactLenis from "lenis/react";
 export default function ContactPopUp({ formData }: Props) {
