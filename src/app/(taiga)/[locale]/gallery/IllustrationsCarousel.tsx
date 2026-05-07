@@ -4,6 +4,8 @@ import useInfiniteScroll from "@/function/useInfiniteScroll";
 import { Media } from "@/payload-types";
 import { motion } from "motion/react";
 import { Link } from "@/i18n/navigation";
+import { useEffect, useState } from "react";
+import { useMediaQuery } from "react-responsive";
 
 type Props = {
   illustrations: Array<{
@@ -14,9 +16,18 @@ type Props = {
 };
 
 export default function IllustrationsCarousel({ illustrations }: Props) {
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const mediaQuery = useMediaQuery({ query: "(max-width: 550px)" });
+
+  useEffect(() => {
+    setIsSmallScreen(mediaQuery);
+  }, [mediaQuery]);
+
+  const speed = isSmallScreen ? 1 : 4;
+
   const { animateScope, pageRef, x } = useInfiniteScroll(
     illustrations?.length ?? 0,
-    4,
+    speed,
     false,
   );
 

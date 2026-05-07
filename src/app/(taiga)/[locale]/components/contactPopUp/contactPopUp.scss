@@ -47,6 +47,9 @@
     border: 3px solid #616161;
     background: black url("/b/grunge1_30.png");
     max-height: 80vh;
+    @media screen and (max-width: 550px) {
+      max-width: 95%;
+    }
     h2 {
       font-size: 2.4rem;
       text-align: center;
@@ -72,6 +75,10 @@
       display: flex;
       flex-direction: column;
       gap: 1em;
+      @media screen and (max-width: 550px) {
+        padding: 1em;
+        font-size: 1rem;
+      }
     }
     .footer {
       background: linear-gradient(to right, #151515, #242424);

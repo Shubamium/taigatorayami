@@ -36,7 +36,10 @@
     margin-top: 200px;
     background: linear-gradient(to bottom, #111111, #0c0c0c);
     padding: 50px;
-
+    @media screen and (max-width: 550px) {
+      padding: 20px;
+      margin-top: 150px;
+    }
     .confine {
       max-width: 900px;
       margin: 0 auto;
@@ -46,10 +49,19 @@
         width: max-content;
         padding: 0 0.1em;
         margin-bottom: 0.2em;
+        @media screen and (max-width: 768px) {
+          font-size: 3rem;
+        }
       }
       p {
         font-size: 1.7rem;
         margin-bottom: 1em;
+        @media screen and (max-width: 768px) {
+          font-size: 1.2rem;
+        }
+        @media screen and (max-width: 420px) {
+          font-size: 1rem;
+        }
       }
 
       #formcontact {
@@ -66,6 +78,9 @@
           font-size: 1.4rem;
           text-transform: uppercase;
           margin-bottom: 0;
+          @media screen and (max-width: 768px) {
+            font-size: 1rem;
+          }
         }
         input,
         textarea {
@@ -75,6 +90,9 @@
           border: 2px solid #3a3a3a;
           color: #b1b1b1;
           font-size: 1.2rem;
+          @media screen and (max-width: 768px) {
+            font-size: 1rem;
+          }
           &::placeholder {
             color: #b1b1b13a;
           }
@@ -110,6 +128,10 @@
           justify-content: center;
           gap: 3em;
           font-size: 2rem;
+          @media screen and (max-width: 550px) {
+            font-size: 1.4rem;
+            align-items: center;
+          }
           font-family: var(--fontqtt);
         }
       }

@@ -20,6 +20,12 @@
           width: 100%;
           white-space: nowrap;
           text-align: center;
+          @media screen and (max-width: 550px) {
+            font-size: 5rem;
+          }
+          @media screen and (max-width: 420px) {
+            font-size: 3rem;
+          }
         }
         hr {
           background: url("/d/orstroke.png");
@@ -39,11 +45,19 @@
         grid-template-columns: 1fr 2fr;
         gap: 2em;
         max-width: 1440px;
+        @media screen and (max-width: 1024px) {
+          display: flex;
+          flex-direction: column-reverse;
+          max-width: 95%;
+        }
         .hlt {
           max-width: max-content;
           padding: 0 0.2em;
           padding-right: 1em;
           font-size: 1.4rem;
+          @media screen and (max-width: 550px) {
+            font-size: 1.2rem;
+          }
         }
         .desc {
           margin: 1em 0;
@@ -80,6 +94,11 @@
               grid-template-columns: 1fr 1fr;
               gap: 0.5em;
               margin: 1em 0;
+              &:has(.icon) {
+                @media screen and (max-width: 420px) {
+                  grid-template-columns: 1fr;
+                }
+              }
               .info {
                 padding: 0.5em 0.7em;
 
@@ -100,11 +119,17 @@
                   font-size: 1.1rem;
                   // opacity: 0.4;
                   color: #484848;
+                  @media screen and (max-width: 550px) {
+                    font-size: 0.9rem;
+                  }
                 }
                 p {
                   font-size: 1.3rem;
                   color: #b1b1b1;
                   text-align: right;
+                  @media screen and (max-width: 550px) {
+                    font-size: 1rem;
+                  }
                 }
 
                 &.icon {
@@ -140,7 +165,9 @@
   #illustrations {
     margin-block: 100px;
     position: relative;
-
+    @media screen and (max-width: 1024px) {
+      max-width: 95%;
+    }
     &::before {
       content: "";
       z-index: -10;
@@ -157,10 +184,15 @@
       gap: 2em;
       display: flex;
       justify-content: center;
-
+      @media screen and (max-width: 768px) {
+        flex-wrap: wrap;
+      }
       .hlt {
         font-size: 2.5rem;
         padding: 0.1em 0.5em;
+        @media screen and (max-width: 420px) {
+          font-size: 1.4rem;
+        }
       }
       p {
         max-width: 400px;
@@ -179,6 +211,13 @@
         gap: 3em;
         flex-wrap: nowrap;
         height: 500px;
+        @media screen and (max-width: 1024px) {
+          height: 300px;
+          gap: 1em;
+        }
+        @media screen and (max-width: 550px) {
+          height: 240px;
+        }
       }
       padding: 1em;
       max-width: 1920px;
@@ -210,6 +249,11 @@
           font-size: 1.2rem;
           clip-path: polygon(20px 0%, 100% 0, 100% 100%, 0% 100%);
           padding-left: 30px;
+
+          @media screen and (max-width: 550px) {
+            font-size: 1rem;
+          }
+
           span {
             font-weight: bold;
           }

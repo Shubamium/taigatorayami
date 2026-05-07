@@ -20,7 +20,7 @@ export default function useInfiniteScroll(
       repeat: Infinity,
       ease: "linear",
     });
-  }, [animate, bound, elAmount]);
+  }, [animate, bound, elAmount, durMul]);
 
   return {
     pageRef: ref,
